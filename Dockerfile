@@ -27,13 +27,13 @@ RUN curl -o /cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-l
 
 
 RUN mkdir /sencha
-# RUN cd sencha
+RUN cd sencha
 # RUN mkdir cmd
 # RUN mkdir sdk
 # RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
 RUN curl http://sunnyjacob.co.uk/private_cdn/ext-6.0.1-trial.zip -o sencha6-trial.zip    
 # RUN unzip sencha-cmd6.zip -d cmd
-RUN unzip sencha6-trial.zip -d sencha
+RUN unzip sencha6-trial.zip
 # RUN cmd/SenchaCmd-6.0.2.14-linux-amd64.sh
 
 # ENV SENCHA_HOME /sencha/
@@ -41,6 +41,9 @@ RUN unzip sencha6-trial.zip -d sencha
 # ENV PATH $GRAILS_HOME/bin:$PATH
 
 # RUN export PATH=$PATH:/sencha/
+
+RUN cd /
+
 
 # ------------------------------------------------------------------------------
 # Install Cloud9
