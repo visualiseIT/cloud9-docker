@@ -8,13 +8,40 @@ MAINTAINER Kevin Delfour <kevin@delfour.eu>
 # ------------------------------------------------------------------------------
 # Install base
 RUN apt-get update
-RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs
+RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs unzip openjdk-7-jre ruby2.0
 
 # ------------------------------------------------------------------------------
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup | bash -
 RUN apt-get install -y nodejs
-    
+
+
+
+# ------------------------------------------------------------------------------
+# Install Sencha-CMD
+RUN curl -o /cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip && \
+    unzip -p /cmd.sh.zip > /cmd-install.sh && \
+    chmod +x /cmd-install.sh && \
+    /cmd-install.sh -q -dir "/opt/sencha-cmd" && \
+    rm /cmd-install.sh /cmd.sh.zip
+
+
+RUN mkdir /sencha
+# RUN cd sencha
+# RUN mkdir cmd
+# RUN mkdir sdk
+# RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
+RUN curl http://sunnyjacob.co.uk/private_cdn/ext-6.0.1-trial.zip -o sencha6-trial.zip    
+# RUN unzip sencha-cmd6.zip -d cmd
+RUN unzip sencha6-trial.zip -d sencha
+# RUN cmd/SenchaCmd-6.0.2.14-linux-amd64.sh
+
+# ENV SENCHA_HOME /sencha/
+# RUN echo “export GRAILS_HOME=$GRAILS_HOME” >> /home/user/.bashrc
+# ENV PATH $GRAILS_HOME/bin:$PATH
+
+# RUN export PATH=$PATH:/sencha/
+
 # ------------------------------------------------------------------------------
 # Install Cloud9
 RUN git clone https://github.com/c9/core.git /cloud9
