@@ -27,7 +27,7 @@ WORKDIR /sencha-cmd
 RUN curl -o /sencha-cmd/cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip && \
     unzip -p /sencha-cmd/cmd.sh.zip > /sencha-cmd/cmd-install.sh && \
     chmod +x /sencha-cmd/cmd-install.sh && \
-    /sencha/cmd-install.sh 
+    /sencha-cmd/cmd-install.sh 
     # -q -dir "/opt/sencha-cmd"
     # && \
     # rm /cmd-install.sh /cmd.sh.zip
