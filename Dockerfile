@@ -19,15 +19,23 @@ RUN apt-get install -y nodejs
 
 # ------------------------------------------------------------------------------
 # Install Sencha-CMD
-RUN curl -o /cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip && \
-    unzip -p /cmd.sh.zip > /cmd-install.sh && \
-    chmod +x /cmd-install.sh && \
-    /cmd-install.sh -q -dir "/opt/sencha-cmd" && \
-    rm /cmd-install.sh /cmd.sh.zip
+
+RUN mkdir /sencha-cmd
+WORKDIR /sencha-cmd
 
 
+RUN curl -o /sencha-cmd/cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip && \
+    unzip -p /sencha-cmd/cmd.sh.zip > /sencha-cmd/cmd-install.sh && \
+    chmod +x /sencha-cmd/cmd-install.sh && \
+    /sencha/cmd-install.sh 
+    # -q -dir "/opt/sencha-cmd"
+    # && \
+    # rm /cmd-install.sh /cmd.sh.zip
+
+# Install Sencha 6 SDK (Trial)
 RUN mkdir /sencha
 WORKDIR /sencha
+
 # RUN mkdir cmd
 # RUN mkdir sdk
 # RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
