@@ -27,7 +27,7 @@ RUN curl -o /cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-l
 
 
 RUN mkdir /sencha
-RUN cd sencha
+WORKDIR /sencha
 # RUN mkdir cmd
 # RUN mkdir sdk
 # RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
@@ -42,7 +42,7 @@ RUN unzip sencha6-trial.zip
 
 # RUN export PATH=$PATH:/sencha/
 
-RUN cd /
+WORKDIR /
 
 
 # ------------------------------------------------------------------------------
