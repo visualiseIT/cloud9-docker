@@ -22,7 +22,7 @@ RUN apt-get install -y nodejs
 RUN curl -o /cmd.sh.zip http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip && \
     unzip -p /cmd.sh.zip > /cmd-install.sh && \
     chmod +x /cmd-install.sh
-RUN /cmd-install.sh 
+RUN /cmd-install.sh -q
 # -q -dir "/opt/sencha-cmd" && \
 #    rm /cmd-install.sh /cmd.sh.zip
 
