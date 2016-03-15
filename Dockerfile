@@ -34,7 +34,7 @@ RUN cd /sencha
 # RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
 RUN curl http://sunnyjacob.co.uk/private_cdn/ext-6.0.1-trial.zip -o sencha6-trial.zip    
 # RUN unzip sencha-cmd6.zip -d cmd
-RUN unzip sencha6-trial.zip
+RUN unzip /sencha/sencha6-trial.zip
 # RUN cmd/SenchaCmd-6.0.2.14-linux-amd64.sh
 
 # ENV SENCHA_HOME /sencha/
