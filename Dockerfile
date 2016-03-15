@@ -28,13 +28,13 @@ RUN /cmd-install.sh -q
 
 
 RUN mkdir /sencha
-RUN cd /sencha
+# RUN cd /sencha
 # RUN mkdir cmd
 # RUN mkdir sdk
 # RUN curl http://cdn.sencha.com/cmd/6.0.2/no-jre/SenchaCmd-6.0.2-linux-amd64.sh.zip -o sencha-cmd6.zip
-RUN curl http://sunnyjacob.co.uk/private_cdn/ext-6.0.1-trial.zip -o sencha6-trial.zip    
+RUN curl http://sunnyjacob.co.uk/private_cdn/ext-6.0.1-trial.zip -o /sencha6-trial.zip    
 # RUN unzip sencha-cmd6.zip -d cmd
-RUN unzip /sencha/sencha6-trial.zip
+RUN unzip /sencha6-trial.zip -d /sencha
 # RUN cmd/SenchaCmd-6.0.2.14-linux-amd64.sh
 
 # ENV SENCHA_HOME /sencha/
