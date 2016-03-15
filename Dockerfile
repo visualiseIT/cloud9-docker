@@ -72,6 +72,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 1337
+EXPOSE 1841
 EXPOSE 3000
 
 # ------------------------------------------------------------------------------
