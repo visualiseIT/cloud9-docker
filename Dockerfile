@@ -64,5 +64,5 @@ EXPOSE 1841
 EXPOSE 3000
 
 # ------------------------------------------------------------------------------
-# Start supervisor, define default command.
+# Start supervisor, define default command..
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
