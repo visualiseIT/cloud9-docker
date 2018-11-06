@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 # Pull base image.
 # FROM kdelfour/supervisor-docker
-FROM ubuntu:18.04
+FROM ubuntu
 MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
