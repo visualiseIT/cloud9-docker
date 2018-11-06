@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 # Pull base image.
 # FROM kdelfour/supervisor-docker
-FROM ubuntu
+FROM alpine
 MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
