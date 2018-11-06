@@ -2,7 +2,8 @@
 # Based on a work at https://github.com/docker/docker.
 # ------------------------------------------------------------------------------
 # Pull base image.
-FROM kdelfour/supervisor-docker
+# FROM kdelfour/supervisor-docker
+FROM ubuntu:18.04
 MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
