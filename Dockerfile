@@ -2,15 +2,13 @@
 # Based on a work at https://github.com/docker/docker.
 # ------------------------------------------------------------------------------
 # Pull base image.
-# FROM kdelfour/supervisor-docker
-FROM ubuntu:latest
+FROM kdelfour/supervisor-docker
 MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
 # Install base
 RUN apt-get update
-RUN apt-get install -y git unzip 
-#RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs unzip openjdk-7-jre ruby2.0
+RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs unzip openjdk-7-jre ruby2.0
 
 # ------------------------------------------------------------------------------
 # Install Node.js
